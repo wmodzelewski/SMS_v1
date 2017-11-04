@@ -7,6 +7,5 @@ spring:
        config:
            server:
                native:
-                   searchLocations: file:////Users/waldemarmodzelewski/git/SMS_v1/STS_ConfigurationServer/src/main/resources/config/b,
-                                    classpath:config/
+                   searchLocations: classpath:config
                                     

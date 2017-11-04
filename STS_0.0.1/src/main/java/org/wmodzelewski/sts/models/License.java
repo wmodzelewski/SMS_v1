@@ -1,9 +1,34 @@
 package org.wmodzelewski.sts.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "licenses")
 public class License {
+	@Id
+	@Column(name = "license_id")
 	private String id;
+
+	@Column(name = "organizationId")
 	private String organizationId;
+
+	@Column(name = "productName")
 	private String productName;
+
+	@Column(name = "comment")
+	private String comment;
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
 	private String licenseType;
 
 	public String getId() {
@@ -55,6 +80,11 @@ public class License {
 
 	public License withLicenseType(String licenseType) {
 		this.setLicenseType(licenseType);
+		return this;
+	}
+
+	public License withComment(String exampleProperty) {
+		this.setComment("test4 " + exampleProperty);
 		return this;
 	}
 
