@@ -1,0 +1,1 @@
+INSERT INTO Person (id, firstName, secondName, currentProjectId) VALUES ('1','Waldek', 'Modzelewski','1000');
