@@ -8,6 +8,7 @@ import com.cgi.vaadin.model.Person;
 import com.cgi.vaadin.repository.PersonRepository;
 import com.vaadin.annotations.Theme;
 import com.vaadin.data.ValidationException;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Alignment;
@@ -84,7 +85,7 @@ public class FirstAppUI extends UI {
 	}
 
 	private HorizontalLayout createButtons() {
-		Button save = new Button("Save");
+		Button save = new Button("Save", VaadinIcons.USER_CHECK);
 		save.addClickListener(listener -> {
 			Person person;
 			try {
@@ -98,6 +99,7 @@ public class FirstAppUI extends UI {
 		});
 
 		Button createNew = new Button("New");
+		createNew.setDescription("Tworzenie nowego usera");
 		createNew.addClickListener(listener -> {
 			Person p = new Person();
 			personDetails.setPerson(p);
