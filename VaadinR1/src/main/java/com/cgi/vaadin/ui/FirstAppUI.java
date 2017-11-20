@@ -67,9 +67,10 @@ public class FirstAppUI extends UI {
 
 	private Grid<Person> createGrid() {
 		gridPerson = new Grid<>();
-		gridPerson.addColumn(Person::getFirstName);
-		gridPerson.addColumn(Person::getSecondName);
-		gridPerson.addColumn(Person::getCurrentProjectId);
+		gridPerson.addColumn(Person::getFirstName).setCaption("First Name");
+		gridPerson.addColumn(Person::getSecondName).setCaption("Second Name");
+		gridPerson.addColumn(Person::getCurrentProjectId).setCaption("Project");
+
 		gridPerson.setItems((Collection<Person>) personRepository.findAll());
 		mainLayout.addComponent(gridPerson);
 
