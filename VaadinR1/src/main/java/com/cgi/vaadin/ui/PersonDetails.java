@@ -3,11 +3,13 @@ package com.cgi.vaadin.ui;
 import com.cgi.vaadin.model.Person;
 import com.vaadin.data.Binder;
 import com.vaadin.data.ValidationException;
+import com.vaadin.data.converter.StringToIntegerConverter;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
-import com.vaadin.ui.VerticalLayout;
 
-public class PersonDetails extends VerticalLayout {
+public class PersonDetails extends FormLayout {
 
 	TextField id = new TextField("id");
 	TextField firstName = new TextField("firstName");
@@ -19,11 +21,23 @@ public class PersonDetails extends VerticalLayout {
 
 	public PersonDetails() {
 
-		binder.forField(firstName).withValidator(name -> name.length() >= 3, "First Name too short")
-				.withStatusLabel(status).bind(Person::getFirstName, Person::setFirstName);
+		binder.forField(id).withConverter(new StringToIntegerConverter("Need to be integer")).bind("id");
 
-		binder.bindInstanceFields(this);
+		// binder.forField(firstName).withValidator(name -> name.length() >= 2, "First
+		// Name too short")
+		// .withStatusLabel(status).bind(Person::getFirstName, Person::setFirstName);
+
+		binder.forField(firstName).withValidator(name -> name.length() >= 2, "First Name too short")
+				.bind(Person::getFirstName, Person::setFirstName);
+
+		binder.forField(secondName).bind("secondName");
+		binder.forField(currentProjectId).bind("currentProjectId");
+
+		id.setReadOnly(true);
+
+		// binder.bindInstanceFields(this);
 		addComponents(id, firstName, secondName, currentProjectId, status);
+		setDefaultComponentAlignment(Alignment.TOP_CENTER);
 	}
 
 	public void setPerson(Person person) {
