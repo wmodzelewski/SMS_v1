@@ -49,6 +49,7 @@ public class VaadinR2UI extends UI {
 		mainLayout.addComponent(hLayout);
 		createGrid();
 		details = new PersonDetails();
+		details.setPerson(new Person());
 		VerticalLayout vDetails = new VerticalLayout();
 		HorizontalLayout buttons = createButtons();
 		vDetails.addComponents(details, buttons);
@@ -71,6 +72,7 @@ public class VaadinR2UI extends UI {
 				p = details.writePerson();
 				repository.save(p);
 				gridPerson.setItems((Collection<Person>) repository.findAll());
+				details.setPerson(new Person());
 			} catch (ValidationException e) {
 				e.printStackTrace();
 				Notification.show("ERROR", "Error during save " + e.getLocalizedMessage(), Type.ERROR_MESSAGE);
