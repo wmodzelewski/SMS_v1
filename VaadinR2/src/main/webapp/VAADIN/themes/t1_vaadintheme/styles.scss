@@ -1,0 +1,9 @@
+@import "addons.scss";
+@import "t1_vaadintheme.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in t1_vaadintheme.scss */
+.t1_vaadintheme {
+  @include addons;
+  @include t1_vaadintheme;
+}
