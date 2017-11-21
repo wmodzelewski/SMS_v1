@@ -70,9 +70,9 @@ public class VaadinR2UI extends UI {
 			Person p;
 			try {
 				p = details.writePerson();
-				repository.save(p);
+				details.setPerson(repository.save(p));
 				gridPerson.setItems((Collection<Person>) repository.findAll());
-				details.setPerson(new Person());
+				// details.setPerson(new Person());
 			} catch (ValidationException e) {
 				e.printStackTrace();
 				Notification.show("ERROR", "Error during save " + e.getLocalizedMessage(), Type.ERROR_MESSAGE);
