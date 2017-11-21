@@ -70,6 +70,7 @@ public class VaadinR2UI extends UI {
 			Person p;
 			try {
 				p = details.writePerson();
+				// p = repository.save(p);
 				details.setPerson(repository.save(p));
 				gridPerson.setItems((Collection<Person>) repository.findAll());
 				// details.setPerson(new Person());
