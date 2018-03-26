@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_testVM_1_name": {
+            "value": "testvm2"
+        },
+        "virtualNetworks_testwm1VNet0_name": {
+            "value": "testvm2vnet"
+        },
+        "storageAccounts_testwm1storage_name": {
+            "value": "testvm2storage"
+        },
+        "networkInterfaces_testwm1ifname_name": {
+            "value": "testvm2ifname"
+        },
+        "publicIPAddresses_testwm1ifname_name": {
+            "value": "testvm2ip"
+        },
+        "subnets_testwm1Subnet_name": {
+            "value": "testvm2subnet"
+        }
+    }
+}

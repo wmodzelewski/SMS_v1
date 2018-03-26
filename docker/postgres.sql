@@ -17,4 +17,6 @@ INSERT INTO "person2" ("id", "firstname", "secondname", "currentprojectid") VALU
 (1,	'Jan',	'Nowak',	'1'),
 (2,	'Zosia',	'Samosia',	'1');
 
+ CREATE SEQUENCE id_seq START 101;
+
 -- 2017-11-20 21:42:26.221211+00
