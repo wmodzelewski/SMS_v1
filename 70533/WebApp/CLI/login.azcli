@@ -1,0 +1,1 @@
+az login --username wmodzelewskiAZ1@outlook.com --password valdi666
