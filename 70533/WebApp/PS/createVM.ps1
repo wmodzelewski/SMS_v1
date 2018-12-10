@@ -1,4 +1,4 @@
-﻿$resourceGroupName = "testrg1psvmus2"
+﻿$resourceGroupName = "testrg1psvmus4"
 $location = "East US"
 $VMName = "vmOne"
 $VNetName = "vmOnetVNet"
